@@ -6,55 +6,46 @@ const mySkils=[
   {
     skill : 'HTML 5',
     level : 'Advanced',
-    emoji : '💪',
     color : "pink"
   },
   {
     skill : 'CSS',
     level : 'Advanced',
-    emoji : '💪',
     color : "#82A6A7"
   },
   {
     skill : 'JavaSripts',
     level : 'Intermediate',
-    emoji : '😃',
     color : "#AFA7B9"
   },
   {
     skill : 'C',
     level : 'Intermediate',
-    emoji : '😃',
     color : "skyblue"
   },
   {
     skill : 'JAVA',
-    level : 'Begginer',
-    emoji : '🙁',
+    level : 'Beginner',
     color : "yellow"
   },
   {
     skill : 'C++',
     level : 'Intermediate',
-    emoji : '😃',
     color : "blue"
   },
   {
     skill : ' MySQL',
     level : 'Intermediate',
-    emoji : '😃',
     color : "#B09AA9"
   },
   {
     skill : ' WordPress',
     level : 'Advanced',
-    emoji : '💪',
     color : "green"
   },
   {
     skill : ' React',
-    level : 'Begginer',
-    emoji : '🙁',
+    level : 'Beginner',
     color : "#8FAEB3"
   },
 ]
@@ -92,13 +83,11 @@ function Intro() {
 }
 
 function SkillList() {
-  const skillObj = mySkils;
-
   return (
     <div className="skill-list">
    { 
-    skillObj.map((skills) => (
-      <Skill skill={skills.skill} emoji={skills.emoji} color={skills.color} />
+    mySkils.map((skills) => (
+      <Skill skill={skills.skill} level={skills.level} color={skills.color} />
     ))}
     </div> 
   );
@@ -108,7 +97,11 @@ function Skill(props) {
   return (
     <div className="skill" style={{ backgroundColor: props.color }}>
       <span>{props.skill}</span>
-      <span>{props.emoji}</span>
+      <span>
+      {props.level === "Advanced" && "💪"}
+      {props.level === "Intermediate" && "👍"}
+      {props.level === "Beginner" && "👌"}
+      </span>
     </div>
   );
 }
