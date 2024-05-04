@@ -2,53 +2,53 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
-const mySkils=[
+const mySkils = [
   {
-    skill : 'HTML 5',
-    level : 'Advanced',
-    color : "pink"
+    skill: "HTML 5",
+    level: "Advanced",
+    color: "pink",
   },
   {
-    skill : 'CSS',
-    level : 'Advanced',
-    color : "#82A6A7"
+    skill: "CSS",
+    level: "Advanced",
+    color: "#82A6A7",
   },
   {
-    skill : 'JavaSripts',
-    level : 'Intermediate',
-    color : "#AFA7B9"
+    skill: "JavaSripts",
+    level: "Intermediate",
+    color: "#AFA7B9",
   },
   {
-    skill : 'C',
-    level : 'Intermediate',
-    color : "skyblue"
+    skill: "C",
+    level: "Intermediate",
+    color: "skyblue",
   },
   {
-    skill : 'JAVA',
-    level : 'Beginner',
-    color : "yellow"
+    skill: "JAVA",
+    level: "Beginner",
+    color: "yellow",
   },
   {
-    skill : 'C++',
-    level : 'Intermediate',
-    color : "blue"
+    skill: "C++",
+    level: "Intermediate",
+    color: "blue",
   },
   {
-    skill : ' MySQL',
-    level : 'Intermediate',
-    color : "#B09AA9"
+    skill: " MySQL",
+    level: "Intermediate",
+    color: "#B09AA9",
   },
   {
-    skill : ' WordPress',
-    level : 'Advanced',
-    color : "green"
+    skill: " WordPress",
+    level: "Advanced",
+    color: "green",
   },
   {
-    skill : ' React',
-    level : 'Beginner',
-    color : "#8FAEB3"
+    skill: " React",
+    level: "Beginner",
+    color: "#8FAEB3",
   },
-]
+];
 
 function App() {
   return (
@@ -68,7 +68,7 @@ function App() {
 function Avatar() {
   return (
     <div>
-      <img src="pawan.jpg" alt="pawan" className="avatar" />
+      <img src=".../pawan.jpg" alt="pawan" className="avatar" />
     </div>
   );
 }
@@ -85,11 +85,15 @@ function Intro() {
 function SkillList() {
   return (
     <div className="skill-list">
-   { 
-    mySkils.map((skills) => (
-      <Skill skill={skills.skill} level={skills.level} color={skills.color} />
-    ))}
-    </div> 
+      {mySkils.map((skills) => (
+        <Skill
+          skill={skills.skill}
+          level={skills.level}
+          color={skills.color}
+          key={skills.skill}
+        />
+      ))}
+    </div>
   );
 }
 
@@ -98,9 +102,9 @@ function Skill(props) {
     <div className="skill" style={{ backgroundColor: props.color }}>
       <span>{props.skill}</span>
       <span>
-      {props.level === "Advanced" && "💪"}
-      {props.level === "Intermediate" && "👍"}
-      {props.level === "Beginner" && "👌"}
+        {props.level === "Advanced" && "💪"}
+        {props.level === "Intermediate" && "👍"}
+        {props.level === "Beginner" && "👌"}
       </span>
     </div>
   );
